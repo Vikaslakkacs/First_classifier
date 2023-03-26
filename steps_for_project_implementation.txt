@@ -1,4 +1,8 @@
 Phase 1: ##Creating basic files and folders for project start
     Create README.md and initiate git repo
     Create .gitignore and license from github and pull the project from git.
-    create template.py and add all the files and folders that are required for bl;' 
+    create template.py and add all the files and folders variales and create file folders that are required for project.
+    write setup.py files
+    Write setup.cfg file which is about metadata of project eg; license number and type etc.,
+    write pyproject.toml file
+      
