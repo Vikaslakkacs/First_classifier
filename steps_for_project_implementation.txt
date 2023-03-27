@@ -16,4 +16,6 @@ Phase 1: ##Creating basic files and folders for project start
 
 Phase 2:## Creating initial setup and configurations for the project.
     code src/constants/__init__.py 
+    Define configs/config.yaml to define the artifacts
+    implement code in research for first phase of development which is "data ingestion"
     

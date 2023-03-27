@@ -24,7 +24,7 @@ list_of_files= [
     "params.yaml",
     "init_setup.sh", #It helps to create environment
     "requirements.txt",
-    "requirement_dev.txt",## Requirement for development purpose
+    "requirements_dev.txt",## Requirement for development purpose
     "setup.py",
     "setup.cgf",
     "pyproject.toml",##If we are creating python package it is required.
