@@ -1,0 +1,51 @@
+name: firstClassifier
+channels:
+  - apple
+  - conda-forge
+dependencies:
+    - python=3.9
+    - pip>=19.0
+    - jupyter
+    - tensorflow-deps
+    - scikit-learn
+    - scipy
+    - pandas
+    - pandas-datareader
+    - matplotlib
+    - pillow
+    - tqdm
+    - requests
+    - h5py
+    - pyyaml
+    - flask
+    - boto3
+    - ipykernel
+    - pip:
+        - tensorflow-macos
+        - tensorflow-metal
+        - bayesian-optimization
+        - gym
+        - kaggle
+        - dvc
+        - pandas
+        - notebook
+        - numpy
+        - matplotlib
+        - seaborn
+        - python-box==6.0.2
+        - pyYAML
+        - tqdm
+        - ensure==1.0.2
+        - joblib
+        - types-PyYAML
+        - scipy
+        - mlflow==1.26.1
+        - urllib3
+
+        ## Dev requirements
+        - pytest==7.1.3
+        - tox==3.25.1
+        - black==22.8.0
+        - flake8==5.0.4
+        - mypy==0.971
+        

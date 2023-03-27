@@ -1,0 +1,8 @@
+dvc
+pandas
+notebook
+numpy
+matplotlib
+seaborn
+## -e . install local packages
+-e .

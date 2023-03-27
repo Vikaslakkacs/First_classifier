@@ -5,4 +5,10 @@ Phase 1: ##Creating basic files and folders for project start
     write setup.py files
     Write setup.cfg file which is about metadata of project eg; license number and type etc.,
     write pyproject.toml file
-      
+    Write down all the packages that are required in requirement.txt and requirement_dev.txt for development related packages
+    Create tox.ini file with data
+    Create init_setup.sh data for creating environments
+    If requirements need tensorflow for M1 then init_setup_MacM1.sh has to be executed with requirements_dev.yml file.
+    Code common.py in firstClassifier/utils/common.py which consists of basic configuration.
+    Code firstClassifier __init__.py
+    
