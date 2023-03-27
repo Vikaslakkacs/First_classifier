@@ -11,4 +11,9 @@ Phase 1: ##Creating basic files and folders for project start
     If requirements need tensorflow for M1 then init_setup_MacM1.sh has to be executed with requirements_dev.yml file.
     Code common.py in firstClassifier/utils/common.py which consists of basic configuration.
     Code firstClassifier __init__.py
+
+    "Make this as template as it is common for all the python related ML/CNN projects"
+
+Phase 2:## Creating initial setup and configurations for the project.
+    code src/constants/__init__.py 
     
