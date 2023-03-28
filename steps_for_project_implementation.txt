@@ -1,3 +1,6 @@
+Important points:
+    Deep import of classes is important (adding classes in __init__.py constructor)
+
 Phase 1: ##Creating basic files and folders for project start
     Create README.md and initiate git repo
     Create .gitignore and license from github and pull the project from git.
@@ -18,5 +21,6 @@ Phase 2:## Creating initial setup and configurations for the project.
     code src/constants/__init__.py 
     Define configs/config.yaml to define the artifacts
     implement code in research for first phase of development which is "data ingestion"
+    write down entities in src/firstClassifier/entity/config_entity.py and same with config/configuration.py file as well
     Create a ipynb file and create data ingestion process and later paste it in src/firstClassifier/components/data_ingestion
-    
+    copy the code to run data ingestion process to pipeline/stage_01_data_ingestion.py file
