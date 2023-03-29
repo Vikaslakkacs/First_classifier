@@ -1,8 +1,18 @@
+tensorflow
 dvc
 pandas
 notebook
 numpy
 matplotlib
 seaborn
-## -e . install local packages
+python-box==6.0.2
+pyYAML
+tqdm
+ensure==1.0.2
+joblib
+types-PyYAML
+scipy
+mlflow==1.26.1
+urllib3
+types-PyYAML
 -e .
