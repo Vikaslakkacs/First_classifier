@@ -130,3 +130,6 @@ dmypy.json
 #Dataset changes
 *.jpg
 *.zip
+
+## Tox files for testing
+ci.yml
