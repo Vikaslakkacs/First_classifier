@@ -1,7 +1,8 @@
 from firstClassifier.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
 from firstClassifier.utils import read_yaml, create_directories
-from firstClassifier.entity import DataIngestionConfig, PrepareBaseModelConfig
+from firstClassifier.entity import DataIngestionConfig, PrepareBaseModelConfig, PrepareCallbacksConfig, TrainingConfig
 from pathlib import Path
+import os
 
 
 class ConfigurationManager:
@@ -67,3 +68,46 @@ class ConfigurationManager:
                     params_classes= params.CLASSES
             )
         return prepare_base_model_config
+    
+    def get_prepare_callback_config(self)->PrepareCallbacksConfig:
+        """Preparing callback configs
+
+        Returns:
+            PreapareCallbackConfig: PreapareCallbackConfig
+        """
+        ##Config contains the attributes that are present in prepare_base_model in config.yaml
+        
+        config= self.config.prepare_callbacks
+        model_ckpt_dir= os.path.dirname(config.checkpoint_model_filepath)
+        ##Create directory for checkpoint, tensorboard root log
+        create_directories([Path(model_ckpt_dir),
+                            Path(config.tensorboard_root_log_dir)
+                            ])
+
+        prepare_callback_config= PrepareCallbacksConfig(   
+                root_dir= config.root_dir,
+                tensorboard_root_log_dir= config.tensorboard_root_log_dir,
+                checkpoint_model_filepath= config.checkpoint_model_filepath
+
+            )
+        return prepare_callback_config
+    
+    def get_training_config(self)->TrainingConfig:
+        training= self.config.training
+        training_data= os.path.join(self.config.data_ingestion.unzip_dir, "PetImages")
+        create_directories([
+            Path(training.root_dir)
+        ])
+
+        training_config= TrainingConfig(
+            root_dir= Path(training.root_dir),
+            trained_model_path=Path(training.trained_model_path),
+            updated_base_model_path= self.config.prepare_base_model.updated_base_model_path,
+            training_data= Path(training_data),
+            params_epochs= self.params.EPOCHS,
+            params_batch_size= self.params.BATCH_SIZE,
+            params_is_augmentation= self.params.AUGMENTATION,
+            params_image_size= self.params.IMAGE_SIZE
+        )
+
+        return training_config
