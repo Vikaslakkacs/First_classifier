@@ -27,3 +27,6 @@ Phase 2:## Creating initial setup and configurations for the project.
     Create ci.yml(not yaml) under .github/workflows/ci.yml: It will test the entire package whenever push happens to github.
 
 Phase 3: ## Same as Data ingestion process but with different names.
+
+imp noteS:
+before runing dvc, dvc init has to be run first
