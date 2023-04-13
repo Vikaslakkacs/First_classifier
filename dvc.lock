@@ -1,0 +1,40 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/firstClassifier/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: configs/config.yaml
+      md5: 26c0ae34f62a9e9e93cc9a97243d5f1f
+      size: 810
+    - path: src/firstClassifier/pipeline/stage_01_data_ingestion.py
+      md5: 4e68cb92ffee6f22c7c27a41b5061432
+      size: 716
+    outs:
+    - path: artifacts/data_ingestion/PetImages
+      md5: 3a5cf86541f22c236620ce5b952ad684.dir
+      size: 848866410
+      nfiles: 24998
+  prepare_base_model:
+    cmd: python src/firstClassifier/pipeline/stage_02_prepare_base_model.py
+    deps:
+    - path: configs/config.yaml
+      md5: 26c0ae34f62a9e9e93cc9a97243d5f1f
+      size: 810
+    - path: src/firstClassifier/pipeline/stage_02_prepare_base_model.py
+      md5: 5c0d168053803a3d67427706eddba999
+      size: 590
+    params:
+      params.yaml:
+        CLASSES: 2
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+        INCLUDE_TOP: false
+        LEARNING_RATE: 0.01
+        WEIGHTS: imagenet
+    outs:
+    - path: artifacts/prepare_base_model
+      md5: bae9c3bfcac0ca03c5db8b7238c54855.dir
+      size: 118055520
+      nfiles: 2
