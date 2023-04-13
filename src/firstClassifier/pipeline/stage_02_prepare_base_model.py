@@ -13,6 +13,7 @@ try:
     logger.info("preparing base model")
     prepare_base_model= PrepareBaseModel(perpare_base_model_config)
     prepare_base_model.get_base_model()
+    prepare_base_model.update_base_model()
     logger.info("Model update completed")
   
 except Exception as e:
