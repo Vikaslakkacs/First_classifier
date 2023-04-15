@@ -1,6 +1,8 @@
 from firstClassifier.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
 from firstClassifier.utils import read_yaml, create_directories
-from firstClassifier.entity import DataIngestionConfig, PrepareBaseModelConfig, PrepareCallbacksConfig, TrainingConfig
+from firstClassifier.entity import (DataIngestionConfig, PrepareBaseModelConfig,
+                                     PrepareCallbacksConfig,
+                                     TrainingConfig, EvaluationConfig)
 from pathlib import Path
 import os
 
@@ -111,3 +113,13 @@ class ConfigurationManager:
         )
 
         return training_config
+    def get_validation_config(self)->EvaluationConfig:
+        evaluation= self.config.training
+        dataset= os.path.join(self.config.data_ingestion.root_dir, "PetImages")
+        eval_config= EvaluationConfig(
+            path_of_model= evaluation.trained_model_path,
+            training_data= dataset,
+            params_image_size=self.params.IMAGE_SIZE,
+            params_batch_size=self.params.BATCH_SIZE
+        )
+        return eval_config
