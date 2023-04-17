@@ -133,3 +133,7 @@ dmypy.json
 
 ## Tox files for testing
 ci.yml
+
+## Mlflow
+mlruns/
+mlflow_dir/

@@ -30,3 +30,10 @@ Phase 3: ## Same as Data ingestion process but with different names.
 
 imp noteS:
 before runing dvc, dvc init has to be run first
+
+
+mlflow:
+install mlflow
+Create Dagshub account
+copy the environmental variables from dagshub with username password and uri
+publish the results using mlflow methods
