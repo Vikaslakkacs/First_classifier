@@ -119,6 +119,8 @@ class ConfigurationManager:
         eval_config= EvaluationConfig(
             path_of_model= evaluation.trained_model_path,
             training_data= dataset,
+            all_params= self.params,
+            mlflow_uri=self.config.evaluation.mlflow_uri,
             params_image_size=self.params.IMAGE_SIZE,
             params_batch_size=self.params.BATCH_SIZE
         )
